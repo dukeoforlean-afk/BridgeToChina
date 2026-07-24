@@ -3,546 +3,780 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bridge to China — языковые курсы и поступление в университеты Китая</title>
-<meta name="description" content="Помогаем поступить на языковые курсы в Китае: подбор программы и университета, подготовка документов, сопровождение до зачисления.">
+<title>Bridge to China — Языковые курсы в Китае</title>
+<meta name="description" content="Помогаем поступить на языковые курсы в лучшие университеты Китая. Бесплатная консультация.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ═══ RESET ═══ */
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+/* ═══ TOKENS ═══ */
 :root{
-  --ink:#16243F;--ink-soft:#4B5468;--paper:#F6F2E9;--paper-deep:#EEE7D8;
-  --white:#FFF;--red:#C1502E;--red-d:#9F3E22;--green:#2F6657;--green-s:#E4EEE9;
-  --gold:#B8902F;--line:#DCD4C0;--r:18px;--sh:0 18px 40px -22px rgba(22,36,63,.35);
+  --void:#05070D;
+  --deep:#0D1322;
+  --panel:#111827;
+  --glass:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.08);
+  --white:#FFFFFF;
+  --fog:rgba(255,255,255,.5);
+  --mist:rgba(255,255,255,.28);
+  --red:#C8301D;
+  --red-h:#E03D29;
+  --gold:#C8963B;
+  --cream:#F5F3EE;
+  --cream2:#EDEAE3;
+  --ink:#12151D;
+  --ink2:#4A5568;
+  --inkborder:#DDE1E9;
+  --r:10px;
 }
-*{box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
-h1,h2,h3,h4{font-family:'Fraunces',serif;margin:0;line-height:1.12;font-weight:600;color:var(--ink);}
-p{margin:0;}a{color:inherit;text-decoration:none;}
-img{display:block;width:100%;height:100%;object-fit:cover;}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);}
-.eyebrow::before{content:"";width:20px;height:1px;background:var(--red);display:inline-block;}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;border:1.5px solid transparent;transition:transform .15s,background .2s;font-family:'Manrope',sans-serif;}
-.btn-p{background:var(--red);color:#fff;box-shadow:0 12px 26px -12px rgba(193,80,46,.6);}
-.btn-p:hover{background:var(--red-d);transform:translateY(-1px);}
-.btn-g{background:transparent;border-color:rgba(22,36,63,.22);color:var(--ink);}
-.btn-g:hover{border-color:var(--ink);}
 
-/* Nav */
-header{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-.logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;}
-.logo svg{flex:none;width:32px;height:32px;}
-.nav-links{display:flex;gap:26px;font-weight:600;font-size:13.5px;color:var(--ink-soft);}
-.nav-links a:hover{color:var(--red);}
-.nav-cta{display:flex;gap:10px;}
-.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;border-radius:9px;border:1.5px solid var(--line);background:var(--white);cursor:pointer;}
-.burger span{width:16px;height:2px;background:var(--ink);margin:0 auto;display:block;border-radius:2px;}
-.mob{display:none;position:fixed;inset:0;top:69px;background:var(--paper);z-index:49;padding:8px 28px 40px;overflow-y:auto;}
-.mob.open{display:block;}
-.mob a{display:block;padding:15px 0;font-weight:700;font-size:17px;border-bottom:1px solid var(--line);}
-.mob .btn-p{width:100%;margin-top:20px;}
+/* ═══ BASE ═══ */
+body{background:var(--void);color:var(--white);font-family:"Inter",sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+::selection{background:var(--red);color:#fff;}
+h1,h2,h3,h4{font-family:"Fraunces",serif;line-height:1.07;letter-spacing:-.025em;}
+a{color:inherit;text-decoration:none;}
+img{display:block;object-fit:cover;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px;}
 
-/* Hero */
-.hero{padding:56px 0 0;overflow:hidden;}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;padding-bottom:48px;}
-.hero h1{font-size:clamp(30px,4.6vw,54px);letter-spacing:-.015em;}
-.hero h1 em{font-style:italic;color:var(--red);}
-.hero-sub{margin-top:16px;font-size:16.5px;color:var(--ink-soft);max-width:450px;}
-.hero-ctas{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;}
-.hero-nums{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;}
-.hero-nums .n{font-family:'Fraunces',serif;font-size:19px;font-weight:600;display:block;}
-.hero-nums .l{font-size:11.5px;color:var(--ink-soft);max-width:120px;display:block;}
-.hero-photo-wrap{position:relative;height:420px;border-radius:22px;overflow:hidden;box-shadow:var(--sh);background:#1a2940;}
-.hero-photo-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(22,36,63,.72) 0%,transparent 55%);}
-.hero-tag{position:absolute;left:22px;bottom:20px;right:22px;color:#fff;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;}
-.hero-tag .ct{font-family:'Fraunces',serif;font-size:21px;font-weight:600;}
-.hero-tag .cn{font-size:11px;opacity:.7;max-width:130px;text-align:right;line-height:1.5;}
-.photo-cr{position:absolute;top:10px;right:10px;z-index:1;font-size:9px;color:rgba(255,255,255,.4);background:rgba(0,0,0,.22);padding:2px 6px;border-radius:3px;}
-.hero-strip{border-top:1px solid var(--line);padding:18px 0;display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft);}
-.hero-strip b{color:var(--ink);}
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
 
-/* USP Payment */
-.usp-pay{background:var(--ink);padding:76px 0;}
-.usp-pay .eyebrow{color:#E7B65A;}.usp-pay .eyebrow::before{background:#E7B65A;}
-.usp-pay h2{color:#fff;font-size:clamp(24px,3.2vw,36px);margin-top:12px;max-width:600px;}
-.usp-sub{color:rgba(255,255,255,.62);margin-top:10px;font-size:15.5px;max-width:540px;}
-.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:38px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);}
-.pay-step{padding:36px 32px;position:relative;}
-.pay-step:first-child{background:rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.1);}
-.pay-step:last-child{background:rgba(47,102,87,.12);}
-.pay-num{font-family:'Fraunces',serif;font-size:52px;font-weight:600;line-height:1;color:#fff;}
-.pay-num sup{font-size:18px;font-family:'Manrope',sans-serif;color:rgba(255,255,255,.5);font-weight:400;}
-.pay-label{font-weight:800;font-size:15.5px;color:#fff;margin-top:8px;}
-.pay-desc{font-size:13.5px;color:rgba(255,255,255,.6);margin-top:8px;max-width:330px;line-height:1.65;}
-.pay-badge{display:inline-block;margin-top:14px;padding:6px 13px;border-radius:999px;font-size:12px;font-weight:700;}
-.pay-step:first-child .pay-badge{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);}
-.pay-step:last-child .pay-badge{background:rgba(47,102,87,.4);color:#7EDCB0;}
-.pay-arr{position:absolute;right:-17px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--ink);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;z-index:2;color:rgba(255,255,255,.6);font-size:14px;}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px;}
-.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:20px 18px;}
-.why-card .ic{font-size:20px;margin-bottom:8px;}
-.why-card h4{font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;color:#fff;}
-.why-card p{font-size:12.5px;color:rgba(255,255,255,.56);margin-top:5px;}
+/* ═══ BUTTONS ═══ */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:6px;font-family:"Inter",sans-serif;font-weight:600;font-size:14.5px;cursor:pointer;border:1.5px solid transparent;transition:all .2s;white-space:nowrap;position:relative;overflow:hidden;}
+.btn::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.08);opacity:0;transition:opacity .2s;}
+.btn:hover::after{opacity:1;}
+.btn-red{background:var(--red);color:#fff;border-color:var(--red);}
+.btn-red:hover{background:var(--red-h);border-color:var(--red-h);transform:translateY(-1px);}
+.btn-border{background:transparent;color:var(--white);border-color:rgba(255,255,255,.3);}
+.btn-border:hover{border-color:#fff;}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink);}
+.btn-dark:hover{background:#1C2535;}
 
-/* Sections */
-section{padding:88px 0;}
-.sec-head{max-width:610px;margin-bottom:42px;}
-.sec-head h2{font-size:clamp(24px,3.2vw,36px);margin-top:10px;}
-.sec-head p{margin-top:12px;color:var(--ink-soft);font-size:15.5px;}
+/* ═══ NAV ═══ */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,border-color .3s;}
+.site-nav.scrolled{background:rgba(5,7,13,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:600;font-size:17px;color:#fff;letter-spacing:-.01em;}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--fog);}
+.nav-links a:hover{color:#fff;}
+.nav-right{display:flex;gap:10px;}
+.burger{display:none;width:40px;height:40px;border-radius:7px;border:1.5px solid var(--border);background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.burger span{display:block;width:16px;height:1.5px;background:#fff;border-radius:2px;transition:all .25s;}
+.burger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px);}
+.burger.active span:nth-child(2){opacity:0;}
+.burger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
+.mob{display:none;position:fixed;inset:0;top:68px;background:var(--void);z-index:199;padding:20px 32px 48px;flex-direction:column;}
+.mob.open{display:flex;}
+.mob-link{padding:18px 0;font-size:22px;font-family:"Fraunces",serif;color:#fff;border-bottom:1px solid var(--border);}
+.mob-cta{margin-top:28px;display:flex;flex-direction:column;gap:12px;}
 
-/* About */
-.about{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center;}
-.about-img{position:relative;border-radius:var(--r);overflow:hidden;height:390px;background:#1a2940;}
-.about-cap{position:absolute;inset:0;background:linear-gradient(to top,rgba(22,36,63,.88) 0%,rgba(22,36,63,.04) 58%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:26px;}
-.about-cap blockquote{margin:0;font-family:'Fraunces',serif;font-size:19px;line-height:1.4;color:#fff;font-style:italic;}
-.about-cap .who{margin-top:8px;font-size:11px;color:rgba(255,255,255,.48);font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
-.al{margin-top:22px;display:grid;gap:13px;list-style:none;padding:0;}
-.al li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink-soft);}
-.dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--red);margin-top:8px;}
-.al b{color:var(--ink);}
+/* ═══ HERO ═══ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.22;transform:scale(1.04);transition:transform 8s ease;}
+.hero-bg-gradient{position:absolute;inset:0;background:linear-gradient(to right,rgba(5,7,13,.97) 0%,rgba(5,7,13,.75) 55%,rgba(5,7,13,.3) 100%);}
+.hero-bg-gradient-bottom{position:absolute;bottom:0;left:0;right:0;height:280px;background:linear-gradient(to top,var(--void) 0%,transparent 100%);}
+.hero-kanji{position:absolute;right:-2vw;top:50%;transform:translateY(-50%);font-family:"Fraunces",serif;font-size:clamp(200px,28vw,380px);color:#fff;opacity:.03;user-select:none;pointer-events:none;line-height:1;font-weight:700;white-space:nowrap;}
+.hero-content{position:relative;z-index:2;padding:120px 0 80px;width:100%;}
+.hero-tag{display:inline-flex;align-items:center;gap:12px;margin-bottom:32px;}
+.hero-tag-line{width:32px;height:1.5px;background:var(--red);}
+.hero-tag-text{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);}
+.hero h1{font-size:clamp(44px,7.5vw,106px);font-weight:600;max-width:820px;line-height:1.02;margin-bottom:28px;}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--gold);}
+.hero-sub{font-size:clamp(15px,1.4vw,18px);color:var(--fog);max-width:480px;line-height:1.7;margin-bottom:40px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px;}
+.hero-stats{display:flex;gap:0;border-top:1px solid var(--border);padding-top:36px;flex-wrap:wrap;}
+.hs{padding:0 40px 0 0;position:relative;}
+.hs+.hs{border-left:1px solid var(--border);padding-left:40px;}
+.hs-v{font-family:"Fraunces",serif;font-size:30px;font-weight:500;color:#fff;display:block;}
+.hs-l{font-size:12px;color:var(--mist);display:block;margin-top:2px;}
+.hero-scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--mist);font-size:10px;letter-spacing:.15em;text-transform:uppercase;}
+.scroll-bar{width:1px;height:48px;background:linear-gradient(to bottom,var(--mist),transparent);animation:scrollbar 1.8s ease infinite;}
+@keyframes scrollbar{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1;transform:scaleY(1)}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
 
-/* Services */
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.sc{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;transition:transform .2s,box-shadow .2s;}
-.sc:hover{transform:translateY(-3px);box-shadow:var(--sh);}
-.sc .ix{font-family:'Fraunces',serif;font-style:italic;color:var(--red);font-size:13.5px;}
-.sc h3{font-size:17.5px;margin-top:10px;}
-.sc p{margin-top:8px;font-size:13.5px;color:var(--ink-soft);}
-.sc.full{grid-column:1/-1;display:flex;gap:18px;align-items:center;background:var(--ink);}
-.sc.full h3,.sc.full p{color:#fff;}
-.sc.full p{color:rgba(255,255,255,.68);}
-.sc.full .badge{flex:none;width:50px;height:50px;border-radius:12px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gold);}
+/* ═══ DUAL TICKER ═══ */
+.ticker-wrap{background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:14px 0;}
+.ticker-row{display:flex;white-space:nowrap;margin-bottom:10px;}
+.ticker-row:last-child{margin-bottom:0;}
+.ticker-track{display:flex;gap:0;animation:tickL 25s linear infinite;}
+.ticker-track-r{animation:tickR 30s linear infinite;}
+@keyframes tickL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes tickR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.ti{display:inline-flex;align-items:center;gap:24px;padding:0 24px;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--fog);}
+.ti-sep{color:var(--red);font-size:10px;}
+.ti-zh{color:var(--gold);font-size:14px;font-weight:400;opacity:.8;}
 
-/* Process */
-.process{background:var(--ink);color:#fff;}
-.process .eyebrow{color:#E7B65A;}.process .eyebrow::before{background:#E7B65A;}
-.process h2{color:#fff;margin-top:12px;}
-.process .sd{color:rgba(255,255,255,.58);margin-top:10px;font-size:15.5px;}
-.rail{position:relative;margin-top:38px;}
-.rl{position:absolute;top:28px;left:0;right:0;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 8px,transparent 8px 15px);}
-.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;position:relative;}
-.step{display:flex;flex-direction:column;gap:11px;}
-.node{width:56px;height:56px;border-radius:50%;background:var(--ink);border:2px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:17px;color:#E7B65A;position:relative;z-index:2;}
-.step:first-child .node{background:var(--red);border-color:var(--red);color:#fff;}
-.step:last-child .node{background:var(--green);border-color:var(--green);color:#fff;}
-.step h4{font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;color:#fff;}
-.step p{font-size:12px;color:rgba(255,255,255,.55);}
-.rbanks{display:flex;justify-content:space-between;margin-top:30px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+/* ═══ WHY CHINA ═══ */
+.why-china{background:var(--void);padding:120px 0;}
+.why-china-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.wc-img{position:relative;height:540px;border-radius:16px;overflow:hidden;background:var(--deep);}
+.wc-img img{width:100%;height:100%;}
+.wc-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,13,.85) 0%,transparent 50%);}
+.wc-img-label{position:absolute;bottom:24px;left:24px;right:24px;}
+.wc-img-label .city{font-family:"Fraunces",serif;font-size:22px;color:#fff;font-weight:300;font-style:italic;}
+.wc-text .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+.wc-text .eyebrow::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.wc-text h2{font-size:clamp(32px,3.8vw,50px);font-weight:600;line-height:1.06;margin-bottom:24px;}
+.wc-text h2 em{font-style:italic;font-weight:300;color:var(--gold);}
+.wc-text p{font-size:16px;color:var(--fog);line-height:1.75;margin-bottom:14px;}
+.wc-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;}
+.wf{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:20px 18px;}
+.wf-v{font-family:"Fraunces",serif;font-size:24px;font-weight:500;color:#fff;display:block;}
+.wf-l{font-size:12px;color:var(--mist);margin-top:2px;display:block;}
 
-/* Universities */
-.ug{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.uc{border-radius:var(--r);overflow:hidden;background:var(--white);border:1px solid var(--line);transition:transform .2s,box-shadow .2s;}
-.uc:hover{transform:translateY(-3px);box-shadow:var(--sh);}
-.ua{height:196px;overflow:hidden;background:#1a2940;}
-.ua img{transition:transform .45s ease;}
-.uc:hover .ua img{transform:scale(1.06);}
-.ub{padding:17px 19px 21px;}
-.ub-city{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);font-weight:700;}
-.ub h3{font-size:17px;margin-top:4px;}
-.ub p{margin-top:6px;font-size:13px;color:var(--ink-soft);}
+/* ═══ SERVICES ═══ */
+.services{background:var(--deep);padding:120px 0;}
+.services .ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.services .ey::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.srv-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:64px;}
+.srv-head h2{font-size:clamp(30px,3.8vw,48px);}
+.srv-head p{color:var(--fog);font-size:15.5px;line-height:1.7;}
+.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);}
+.srv{background:var(--deep);padding:40px 36px;transition:background .25s;}
+.srv:hover{background:var(--panel);}
+.srv-ico{width:46px;height:46px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:24px;background:var(--glass);}
+.srv h3{font-size:clamp(18px,1.8vw,22px);font-weight:500;margin-bottom:14px;}
+.srv p{font-size:14px;color:var(--fog);line-height:1.7;}
+.srv-items{margin-top:18px;display:flex;flex-direction:column;gap:8px;}
+.si{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--mist);}
+.si::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);flex:none;}
 
-/* Pricing */
-.pricing{background:var(--white);border-top:1px solid var(--line);}
-.pg{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
-.pl{background:var(--ink);color:#fff;padding:42px 34px;display:flex;flex-direction:column;justify-content:center;gap:12px;}
-.pl .eyebrow{color:#E7B65A;}.pl .eyebrow::before{background:#E7B65A;}
-.pl-amt{font-family:'Fraunces',serif;font-size:48px;color:#fff;line-height:1;}
-.pl-amt sub{font-size:16px;color:rgba(255,255,255,.5);font-family:'Manrope',sans-serif;}
-.pl-parts{display:flex;gap:8px;flex-wrap:wrap;}
-.pl-part{background:rgba(255,255,255,.1);border-radius:8px;padding:7px 11px;font-size:12.5px;color:rgba(255,255,255,.75);}
-.pl-part b{color:#fff;display:block;font-size:14.5px;}
-.pl p{color:rgba(255,255,255,.62);font-size:13.5px;}
-.pr{padding:42px 34px;background:var(--paper);}
-.pr h3{font-size:16.5px;margin-bottom:14px;}
-.pr ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
-.pr li{display:flex;gap:9px;font-size:13.5px;color:var(--ink-soft);}
-.ck{flex:none;width:18px;height:18px;border-radius:50%;background:var(--green-s);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;}
-.pr-note{margin-top:18px;padding:12px 14px;background:var(--paper-deep);border-radius:10px;font-size:12.5px;color:var(--ink-soft);border-left:3px solid var(--red);}
+/* ═══ PROCESS ═══ */
+.process{background:var(--void);padding:120px 0;}
+.process .ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.process .ey::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.process h2{font-size:clamp(30px,3.8vw,48px);margin-bottom:72px;}
+.process-track{position:relative;padding-left:80px;}
+.process-line{position:absolute;left:22px;top:22px;bottom:22px;width:1.5px;background:linear-gradient(to bottom,var(--red) 0%,var(--gold) 100%);}
+.pstep{position:relative;padding:0 0 56px 0;}
+.pstep:last-child{padding-bottom:0;}
+.pstep-dot{position:absolute;left:-69px;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-size:15px;font-weight:600;z-index:2;}
+.pstep:nth-child(1) .pstep-dot{background:var(--red);color:#fff;}
+.pstep:nth-child(2) .pstep-dot,.pstep:nth-child(3) .pstep-dot,.pstep:nth-child(4) .pstep-dot{background:var(--void);border:1.5px solid var(--border);color:var(--fog);}
+.pstep:nth-child(5) .pstep-dot{background:var(--gold);color:#fff;}
+.pstep-body{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:28px 32px;display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:center;transition:border-color .2s;}
+.pstep:hover .pstep-body{border-color:rgba(255,255,255,.16);}
+.pstep-body h3{font-size:19px;font-weight:500;}
+.pstep-body p{font-size:14px;color:var(--fog);line-height:1.7;}
 
-/* Reviews */
-.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.rc{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px;}
-.rc-stars{color:var(--gold);font-size:13px;letter-spacing:2px;}
-.rc p{margin-top:11px;font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
-.rc-who{display:flex;align-items:center;gap:9px;margin-top:16px;}
-.rc-av{width:34px;height:34px;border-radius:50%;background:var(--green-s);color:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;}
-.rc-who .nm{font-weight:700;font-size:13px;}
-.rc-who .mt{font-size:11px;color:var(--ink-soft);}
+/* ═══ CITIES ═══ */
+.cities{background:var(--deep);padding:120px 0;}
+.cities .ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.cities .ey::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.cities-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px;}
+.cities-head h2{font-size:clamp(30px,3.8vw,48px);}
+.cities-head p{font-size:15px;color:var(--fog);max-width:300px;text-align:right;line-height:1.6;}
+.city-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:260px 260px;gap:12px;}
+.city-card{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:var(--panel);}
+.city-card.featured{grid-row:1 / 3;}
+.city-photo{position:absolute;inset:0;transition:transform .6s ease,filter .4s ease;}
+.city-photo img{width:100%;height:100%;}
+.city-card:hover .city-photo{transform:scale(1.07);filter:brightness(1.1);}
+.city-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,13,.92) 0%,rgba(5,7,13,.2) 55%,transparent 100%);transition:background .4s;}
+.city-card:hover .city-overlay{background:linear-gradient(to top,rgba(5,7,13,.96) 0%,rgba(5,7,13,.45) 60%,rgba(5,7,13,.1) 100%);}
+.city-info{position:absolute;bottom:0;left:0;right:0;padding:24px;}
+.city-badge{display:inline-block;background:var(--red);color:#fff;font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;}
+.city-name{font-family:"Fraunces",serif;font-size:clamp(18px,1.8vw,24px);font-weight:500;color:#fff;display:block;line-height:1.15;}
+.city-desc{font-size:13px;color:var(--fog);margin-top:8px;line-height:1.55;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s;opacity:0;}
+.city-card:hover .city-desc{max-height:80px;opacity:1;}
+.city-last{background:var(--void);border:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:28px;}
+.city-last .ql{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700;margin-bottom:10px;}
+.city-last h3{font-family:"Fraunces",serif;font-size:20px;color:#fff;font-weight:400;margin-bottom:12px;line-height:1.3;}
+.city-last a{font-size:13.5px;color:var(--red);font-weight:600;display:flex;align-items:center;gap:6px;}
+.city-last a:hover{color:var(--red-h);}
 
-/* FAQ */
-.faq{background:var(--white);border-top:1px solid var(--line);}
-.fl-list{max-width:720px;}
-.fi{border-bottom:1px solid var(--line);}
-.fq{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:19px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Fraunces',serif;font-size:16.5px;color:var(--ink);}
-.fq .plus{font-size:19px;color:var(--red);transition:transform .25s;flex:none;}
-.fi.open .fq .plus{transform:rotate(45deg);}
-.fa{max-height:0;overflow:hidden;transition:max-height .3s;}
-.fi.open .fa{max-height:160px;}
-.fa p{padding-bottom:18px;color:var(--ink-soft);font-size:13.5px;max-width:580px;}
+/* ═══ QUOTE ═══ */
+.quote-section{background:var(--void);padding:100px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.quote-inner{max-width:840px;margin:0 auto;text-align:center;}
+.quote-mark{font-family:"Fraunces",serif;font-size:80px;color:var(--red);line-height:.6;margin-bottom:24px;opacity:.6;}
+.quote-text{font-family:"Fraunces",serif;font-size:clamp(22px,3vw,34px);font-weight:300;font-style:italic;line-height:1.4;color:#fff;}
+.quote-text strong{font-weight:600;font-style:normal;color:var(--gold);}
+.quote-attr{margin-top:32px;font-size:13px;color:var(--mist);letter-spacing:.05em;}
+.quote-stars{color:var(--gold);font-size:15px;letter-spacing:2px;display:block;margin-bottom:8px;}
 
-/* Contact */
-.contact{background:var(--green-s);}
-.cg{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;}
-.cl p{margin-top:13px;color:var(--ink-soft);font-size:15px;}
-.msg-row{display:flex;gap:9px;margin-top:20px;flex-wrap:wrap;}
-.mp{display:flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:13px;font-weight:700;}
-.fc-card{background:var(--white);border-radius:var(--r);padding:30px;box-shadow:var(--sh);}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:11px;}
-.fc-card label{display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:4px;}
-.fc-card input,.fc-card select{width:100%;padding:11px 12px;border-radius:8px;border:1.5px solid var(--line);font-family:'Manrope',sans-serif;font-size:14px;background:var(--paper);color:var(--ink);}
-.fc-card input:focus,.fc-card select:focus{outline:2px solid var(--red);outline-offset:1px;}
-.f-foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:12px;flex-wrap:wrap;}
-.f-foot small{color:var(--ink-soft);font-size:11px;max-width:240px;}
-#formSuccess{display:none;text-align:center;padding:16px;color:var(--green);font-weight:700;}
+/* ═══ PRICE ═══ */
+.price-section{background:var(--cream);padding:120px 0;}
+.price-section .ey-dark{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.price-section .ey-dark::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.price-section h2{font-size:clamp(30px,3.8vw,48px);color:var(--ink);margin-bottom:52px;}
+.price-block{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;border:1.5px solid var(--inkborder);}
+.pb-left{background:var(--ink);padding:48px 44px;display:flex;flex-direction:column;}
+.pb-left .total{font-family:"Fraunces",serif;font-size:62px;font-weight:500;color:#fff;line-height:1;margin-bottom:6px;}
+.pb-left .total sub{font-size:22px;color:rgba(255,255,255,.4);font-family:"Inter",sans-serif;font-weight:400;}
+.pb-left .total-note{font-size:13.5px;color:rgba(255,255,255,.45);margin-bottom:36px;}
+.pay-steps{display:flex;flex-direction:column;gap:14px;margin-top:auto;}
+.pay-s{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;}
+.pay-s-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;flex:none;margin-top:1px;}
+.p1 .pay-s-num{background:var(--red);color:#fff;}
+.p2 .pay-s-num{background:rgba(200,150,59,.2);color:var(--gold);border:1px solid rgba(200,150,59,.35);}
+.pay-s-txt b{font-size:14.5px;color:#fff;display:block;}
+.pay-s-txt span{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:2px;display:block;}
+.pb-right{background:var(--cream2);padding:48px 44px;}
+.pb-right h3{font-size:17px;color:var(--ink);margin-bottom:24px;font-family:"Inter",sans-serif;font-weight:700;}
+.inc{display:flex;flex-direction:column;gap:13px;margin-bottom:28px;}
+.inc-i{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink2);}
+.inc-check{width:20px;height:20px;border-radius:50%;background:#D1FAE5;color:#065F46;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none;margin-top:1px;}
+.price-footnote{font-size:12.5px;color:var(--ink2);padding:14px 16px;background:#fff;border-radius:8px;border-left:3px solid var(--red);line-height:1.6;}
 
-/* Footer */
-footer{background:var(--ink);color:rgba(255,255,255,.58);padding:50px 0 22px;}
-.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:34px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1);}
-.fl-logo{display:flex;align-items:center;gap:9px;color:#fff;font-family:'Fraunces',serif;font-size:17px;margin-bottom:11px;}
-.fg p{font-size:13px;line-height:1.7;}
-.fcol h5{color:#fff;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:11px;}
-.fcol a{display:block;font-size:13px;padding:4px 0;color:rgba(255,255,255,.58);}
-.fcol a:hover{color:#fff;}
-.fb{display:flex;justify-content:space-between;padding-top:20px;font-size:11.5px;flex-wrap:wrap;gap:7px;}
+/* ═══ REVIEWS ═══ */
+.reviews{background:var(--void);padding:120px 0;}
+.reviews .ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.reviews .ey::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.reviews h2{font-size:clamp(30px,3.8vw,48px);margin-bottom:52px;}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.rev{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:32px;transition:border-color .2s;}
+.rev:hover{border-color:rgba(255,255,255,.18);}
+.rev-stars{color:var(--gold);font-size:14px;letter-spacing:1.5px;margin-bottom:18px;}
+.rev p{font-size:14.5px;color:var(--fog);line-height:1.75;}
+.rev-who{display:flex;align-items:center;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
+.rev-av{width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-size:16px;font-weight:500;flex:none;}
+.rev-nm{font-weight:700;font-size:14px;display:block;}
+.rev-ct{font-size:12px;color:var(--mist);display:block;margin-top:1px;}
 
-/* Responsive */
-@media(max-width:980px){
-  .hero-grid,.about-grid,.cg,.pg{grid-template-columns:1fr;}
-  .hero-photo-wrap{height:270px;}
-  .sg{grid-template-columns:1fr 1fr;}
-  .ug{grid-template-columns:1fr 1fr;}
-  .rg{grid-template-columns:1fr 1fr;}
-  .steps{grid-template-columns:repeat(4,1fr);row-gap:26px;}
-  .rl{display:none;}
-  .pay-grid{grid-template-columns:1fr;}
-  .pay-arr{display:none;}
-  .why-grid{grid-template-columns:1fr 1fr;}
-  .nav-links{display:none;}
-  .fg{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:660px){
-  .wrap{padding:0 16px;}
-  section,.about,.pricing,.faq,.contact,.process,.usp-pay{padding:52px 0;}
-  .nav-cta .btn-g{display:none;}
+/* ═══ FAQ ═══ */
+.faq{background:var(--deep);padding:120px 0;}
+.faq .ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.faq .ey::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.faq h2{font-size:clamp(30px,3.8vw,48px);margin-bottom:52px;}
+.faq-wrap{max-width:760px;}
+.fq{border-bottom:1px solid var(--border);}
+.fq-btn{width:100%;background:none;border:none;text-align:left;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;color:#fff;font-family:"Fraunces",serif;font-size:18px;font-weight:400;}
+.fq-icon{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--fog);transition:all .25s;flex:none;font-family:"Inter",sans-serif;font-weight:300;}
+.fq.open .fq-icon{transform:rotate(45deg);background:var(--red);border-color:var(--red);color:#fff;}
+.fq-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.fq.open .fq-body{max-height:200px;}
+.fq-body p{padding-bottom:24px;font-size:14.5px;color:var(--fog);max-width:620px;line-height:1.75;}
+
+/* ═══ CTA FULL ═══ */
+.cta-full{position:relative;background:var(--red);padding:100px 0;text-align:center;overflow:hidden;}
+.cta-full-kanji{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:"Fraunces",serif;font-size:clamp(200px,30vw,380px);color:#fff;opacity:.04;pointer-events:none;white-space:nowrap;line-height:1;}
+.cta-full h2{position:relative;z-index:1;font-size:clamp(30px,4.5vw,56px);color:#fff;max-width:700px;margin:0 auto 20px;}
+.cta-full p{position:relative;z-index:1;font-size:17px;color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 38px;}
+.cta-full .btns{position:relative;z-index:1;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:#fff;color:var(--red);border:1.5px solid #fff;}
+.btn-white:hover{background:rgba(255,255,255,.9);}
+.btn-red-border{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);}
+.btn-red-border:hover{border-color:#fff;}
+
+/* ═══ CONTACT ═══ */
+.contact{background:var(--void);padding:120px 0;}
+.contact .ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.contact .ey::before{content:"";display:block;width:24px;height:1.5px;background:var(--red);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-info h2{font-size:clamp(28px,3.5vw,44px);margin-bottom:18px;line-height:1.08;}
+.contact-info p{font-size:15.5px;color:var(--fog);line-height:1.7;}
+.channels{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;}
+.ch{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:7px;background:var(--glass);border:1px solid var(--border);font-size:14px;font-weight:600;transition:border-color .18s,background .18s;}
+.ch:hover{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.07);}
+.form-card{background:var(--deep);border:1px solid var(--border);border-radius:16px;padding:40px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fld{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.fld label{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mist);}
+.fld input,.fld select,.fld textarea{padding:13px 15px;border-radius:8px;border:1px solid var(--border);font-family:"Inter",sans-serif;font-size:14px;color:#fff;background:var(--glass);outline:none;transition:border-color .18s;}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:rgba(255,255,255,.3);}
+.fld select option{background:var(--deep);color:#fff;}
+.fld textarea{resize:none;height:96px;}
+.form-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:6px;}
+.form-foot small{font-size:11.5px;color:var(--mist);max-width:220px;}
+#fs{display:none;padding:20px;text-align:center;color:#6EE7B7;font-weight:700;font-size:15px;}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--void);border-top:1px solid var(--border);padding:56px 0 28px;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:"Fraunces",serif;font-size:17px;margin-bottom:14px;}
+.foot-desc{font-size:13.5px;color:rgba(255,255,255,.38);line-height:1.7;}
+.fc h5{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:16px;}
+.fc a{display:block;padding:5px 0;font-size:13.5px;color:rgba(255,255,255,.45);}
+.fc a:hover{color:#fff;}
+.foot-bottom{display:flex;justify-content:space-between;padding-top:22px;font-size:12px;color:rgba(255,255,255,.22);flex-wrap:wrap;gap:8px;}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1000px){
+  .why-china-grid,.contact-grid{grid-template-columns:1fr;}
+  .wc-img{height:300px;}
+  .srv-head{grid-template-columns:1fr;}
+  .city-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .city-card.featured{grid-row:auto;}
+  .rev-grid{grid-template-columns:1fr 1fr;}
+  .price-block{grid-template-columns:1fr;}
+  .pb-left{border-radius:0;border-bottom:1px solid rgba(255,255,255,.08);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .nav-links,.nav-right .btn-border{display:none;}
   .burger{display:flex;}
-  .hero{padding-top:12px;}
-  .hero-ctas{flex-direction:column;}
-  .sg{grid-template-columns:1fr;}
-  .sc.full{flex-direction:column;align-items:flex-start;}
-  .ug{grid-template-columns:1fr;}
-  .rg{grid-template-columns:1fr;}
-  .steps{grid-template-columns:1fr 1fr;}
-  .why-grid{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px;}
+  .hero-content{padding:100px 0 60px;}
+  .hero h1{font-size:38px;}
+  .hero-btns{flex-direction:column;}
+  .hero-stats{flex-direction:column;gap:20px;}
+  .hs+.hs{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:20px;}
+  .why-china,.services,.process,.cities,.reviews,.faq,.contact{padding:80px 0;}
+  .city-grid{grid-template-columns:1fr;}
+  .rev-grid{grid-template-columns:1fr;}
   .f-row{grid-template-columns:1fr;}
-  .fg{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .cta-full{padding:72px 0;}
+  .process-track{padding-left:60px;}
+  .pstep-body{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a href="#" class="logo">
-      <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="#C1502E" stroke-width="1.5"/><path d="M4 22c4-7 10-7 14-7s10 0 14 7" stroke="#16243F" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="22" r="2" fill="#C1502E"/><circle cx="29" cy="22" r="2" fill="#2F6657"/></svg>
+<!-- NAV -->
+<header class="site-nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="17" stroke="#C8301D" stroke-width="1.5"/>
+        <path d="M4 22c4-7 10-7 14-7s10 0 14 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="7" cy="22" r="2" fill="#C8301D"/>
+        <circle cx="29" cy="22" r="2" fill="#C8963B"/>
+      </svg>
       Bridge to China
     </a>
     <nav class="nav-links">
-      <a href="#about">О нас</a><a href="#services">Услуги</a>
-      <a href="#process">Процесс</a><a href="#universities">Университеты</a>
-      <a href="#price">Стоимость</a><a href="#faq">Вопросы</a>
+      <a href="#why">О курсах</a>
+      <a href="#services">Услуги</a>
+      <a href="#process">Процесс</a>
+      <a href="#cities">Города</a>
+      <a href="#price">Стоимость</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn-g">Связаться</a>
-      <a href="#contact" class="btn btn-p">Оставить заявку</a>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-border" style="padding:11px 22px;font-size:13.5px;">Написать</a>
+      <a href="#contact" class="btn btn-red" style="padding:11px 22px;font-size:13.5px;">Бесплатная консультация</a>
       <button class="burger" id="burger"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <div class="mob" id="mob">
-    <a href="#about">О нас</a><a href="#services">Услуги</a>
-    <a href="#process">Процесс</a><a href="#universities">Университеты</a>
-    <a href="#price">Стоимость</a><a href="#faq">Вопросы</a><a href="#contact">Контакты</a>
-    <a href="#contact" class="btn btn-p">Оставить заявку</a>
-  </div>
 </header>
+<nav class="mob" id="mob">
+  <a class="mob-link" href="#why">О курсах</a>
+  <a class="mob-link" href="#services">Услуги</a>
+  <a class="mob-link" href="#process">Процесс</a>
+  <a class="mob-link" href="#cities">Города</a>
+  <a class="mob-link" href="#price">Стоимость</a>
+  <a class="mob-link" href="#faq">FAQ</a>
+  <div class="mob-cta">
+    <a href="#contact" class="btn btn-red" onclick="document.getElementById('mob').classList.remove('open');document.getElementById('burger').classList.remove('active');">Бесплатная консультация</a>
+  </div>
+</nav>
 
 <main>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
+  <div class="hero-bg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg/1400px-Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg" alt="Китай" loading="eager" id="heroBg">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-bg-gradient-bottom"></div>
+  </div>
+  <div class="hero-kanji" aria-hidden="true">中国</div>
+  <div class="wrap hero-content">
+    <div class="hero-tag">
+      <div class="hero-tag-line"></div>
+      <div class="hero-tag-text">Языковые курсы в Китае</div>
+    </div>
+    <h1>Заговори<br>на китайском —<br><em>живя в Китае</em></h1>
+    <p class="hero-sub">Подбираем университет, готовим документы и сопровождаем до зачисления. Первая консультация — бесплатно.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-red" style="padding:16px 34px;font-size:15.5px;">Получить консультацию</a>
+      <a href="#why" class="btn btn-border" style="padding:16px 28px;font-size:15.5px;">Узнать больше</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><span class="hs-v" data-count>Любой город</span><span class="hs-l">помогаем с выбором</span></div>
+      <div class="hs"><span class="hs-v">С нуля</span><span class="hs-l">без знания языка</span></div>
+      <div class="hs"><span class="hs-v">5 шагов</span><span class="hs-l">до зачисления</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll-cue"><div class="scroll-bar"></div>scroll</div>
+</section>
+
+<!-- ═══ DUAL TICKER ═══ -->
+<div class="ticker-wrap">
+  <div class="ticker-row">
+    <div class="ticker-track">
+      <span class="ti">Языковые курсы в Китае <span class="ti-sep">◆</span></span>
+      <span class="ti">Подбор университета <span class="ti-sep">◆</span></span>
+      <span class="ti">Полное сопровождение <span class="ti-sep">◆</span></span>
+      <span class="ti">Оплата за результат <span class="ti-sep">◆</span></span>
+      <span class="ti">Пекин · Шанхай · Ханчжоу · Шэньчжэнь · Чэнду <span class="ti-sep">◆</span></span>
+      <span class="ti">Языковые курсы в Китае <span class="ti-sep">◆</span></span>
+      <span class="ti">Подбор университета <span class="ti-sep">◆</span></span>
+      <span class="ti">Полное сопровождение <span class="ti-sep">◆</span></span>
+      <span class="ti">Оплата за результат <span class="ti-sep">◆</span></span>
+      <span class="ti">Пекин · Шанхай · Ханчжоу · Шэньчжэнь · Чэнду <span class="ti-sep">◆</span></span>
+    </div>
+  </div>
+  <div class="ticker-row">
+    <div class="ticker-track ticker-track-r">
+      <span class="ti"><span class="ti-zh">语言课程</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">北京大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">上海复旦大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">文化沉浸</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">汉语水平考试</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">杭州浙江大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">深圳大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">四川大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">语言课程</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">北京大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">上海复旦大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">文化沉浸</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">汉语水平考试</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">杭州浙江大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">深圳大学</span> <span class="ti-sep">·</span></span>
+      <span class="ti"><span class="ti-zh">四川大学</span> <span class="ti-sep">·</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ WHY CHINA ═══ -->
+<section class="why-china" id="why">
   <div class="wrap">
-    <div class="hero-grid">
+    <div class="why-china-grid">
+      <div class="wc-img reveal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Weiming_Lake%2C_Peking_University.jpg/900px-Weiming_Lake%2C_Peking_University.jpg" alt="Кампус в Китае" loading="lazy">
+        <div class="wc-img-overlay"></div>
+        <div class="wc-img-label"><div class="city">Пекинский университет</div></div>
+      </div>
+      <div class="wc-text">
+        <div class="eyebrow">Почему языковые курсы в Китае</div>
+        <h2>Китайский язык —<br><em>карьерный актив</em><br>на десятилетия</h2>
+        <p>Изучать китайский в Китае — совсем другой опыт. Язык становится частью повседневной жизни: вы слышите его на улице, читаете вывески, общаетесь с однокурсниками. Прогресс за один год в Китае равен нескольким годам занятий дома.</p>
+        <p>Языковые курсы при университетах принимают студентов с любым уровнем, включая нулевой. Программы сочетают интенсивное обучение, знакомство с культурой и жизнь в международной среде.</p>
+        <div class="wc-facts reveal reveal-delay-2">
+          <div class="wf"><span class="wf-v">С нуля</span><span class="wf-l">принимают без знания языка</span></div>
+          <div class="wf"><span class="wf-v">1–2 года</span><span class="wf-l">типичная длина курса</span></div>
+          <div class="wf"><span class="wf-v">В вузе</span><span class="wf-l">программы при университетах</span></div>
+          <div class="wf"><span class="wf-v">Весь мир</span><span class="wf-l">студенты из разных стран</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="srv-head reveal">
       <div>
-        <span class="eyebrow">Языковые курсы в Китае</span>
-        <h1>Поступление на <em>языковые курсы</em> в Китае — под ключ</h1>
-        <p class="hero-sub">Подбираем программу и университет, помогаем с документами и сопровождаем до регистрации в вузе. Вы только выбираете — остальное наша работа.</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-p">Оставить заявку</a>
-          <a href="#process" class="btn btn-g">Как это работает</a>
+        <div class="ey">Что мы делаем</div>
+        <h2>Всё от подбора<br>до зачисления</h2>
+      </div>
+      <p>Берём на себя организационную часть целиком — вы занимаетесь подготовкой и изучением языка.</p>
+    </div>
+    <div class="srv-grid reveal">
+      <div class="srv">
+        <div class="srv-ico">🌏</div>
+        <h3>Подбор программы и университета</h3>
+        <p>Изучаем ваши цели, бюджет и пожелания по городу. Подбираем программы, которые подходят именно вам.</p>
+        <div class="srv-items">
+          <div class="si">Выбор города и вуза под ваш бюджет</div>
+          <div class="si">Сравнение программ по формату и срокам</div>
+          <div class="si">Рекомендации по срокам подачи документов</div>
         </div>
-        <div class="hero-nums">
-          <div><span class="n">HSK</span><span class="l">подготовка и сдача сертификата</span></div>
-          <div><span class="n">6 городов</span><span class="l">подбор по пожеланиям и бюджету</span></div>
-          <div><span class="n">До вуза</span><span class="l">сопровождение до регистрации</span></div>
+      </div>
+      <div class="srv">
+        <div class="srv-ico">📋</div>
+        <h3>Документы и подача заявки</h3>
+        <p>Составляем список документов, помогаем их оформить и подаём заявку в выбранный университет.</p>
+        <div class="srv-items">
+          <div class="si">Полный список необходимых документов</div>
+          <div class="si">Заполнение регистрационных форм</div>
+          <div class="si">Подача и отслеживание статуса</div>
         </div>
       </div>
-      <div class="hero-photo-wrap">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg/1200px-Shanghai_skyline_waterfront_pudong_5166168_69_70.jpg" alt="Шанхай, Китай" loading="eager" style="width:100%;height:100%;">
-        <div class="hero-tag">
-          <span class="ct">Россия &#8594; Китай</span>
-          <span class="cn">от консультации до регистрации в университете</span>
+      <div class="srv">
+        <div class="srv-ico">💬</div>
+        <h3>Личный менеджер на связи</h3>
+        <p>Один контакт — от первого вопроса до финального зачисления. Telegram, WhatsApp или ВКонтакте.</p>
+        <div class="srv-items">
+          <div class="si">Ответы без задержек на русском языке</div>
+          <div class="si">Разъяснение требований вуза</div>
+          <div class="si">Поддержка на каждом этапе</div>
         </div>
-        <span class="photo-cr">Wikimedia Commons / CC0</span>
       </div>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="hero-strip">
-      <span><b>Языковые курсы</b> + сертификат HSK</span>
-      <span><b>Подбор</b> программы, города и вуза</span>
-      <span><b>Документы</b> и подача заявки</span>
-      <span><b>Культура Китая</b> и погружение в язык</span>
-      <span><b>Гранты</b> на бакалавриат / магистратуру</span>
+      <div class="srv">
+        <div class="srv-ico">🎓</div>
+        <h3>Сопровождение до зачисления</h3>
+        <p>Доводим процесс до получения официального приглашения — это и есть финальный результат нашей работы.</p>
+        <div class="srv-items">
+          <div class="si">Контроль получения приглашения от вуза</div>
+          <div class="si">Помощь с нюансами подготовки к отъезду</div>
+          <div class="si">На связи до подтверждения зачисления</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- USP PAYMENT -->
-<section class="usp-pay" id="payment">
-  <div class="wrap">
-    <span class="eyebrow">Наше УТП</span>
-    <h2>Платите только за результат — оплата делится на два этапа</h2>
-    <p class="usp-sub">Мы уверены в своей работе настолько, что берём половину оплаты только после того, как вы получите место в университете и будете готовы к отъезду в Китай.</p>
-    <div class="pay-grid">
-      <div class="pay-step">
-        <div class="pay-num">25 000 <sup>&#8381;</sup></div>
-        <div class="pay-label">Шаг 1 — Предоплата при старте</div>
-        <p class="pay-desc">Вы вносите 50&#37; при заключении договора. Сразу начинаем работу: консультация, подбор программы и университета, подготовка документов.</p>
-        <span class="pay-badge">Оплачивается в начале</span>
-        <div class="pay-arr">&#8594;</div>
-      </div>
-      <div class="pay-step">
-        <div class="pay-num">25 000 <sup>&#8381;</sup></div>
-        <div class="pay-label">Шаг 2 — Оплата после результата</div>
-        <p class="pay-desc">Вторую половину вы платите только после прибытия в Китай и регистрации в офисе университета. Результат есть — платёж есть.</p>
-        <span class="pay-badge">&#10003; Оплачивается по факту</span>
-      </div>
-    </div>
-    <div class="why-grid">
-      <div class="why-card"><div class="ic">&#129309;</div><h4>Мы берём риск на себя</h4><p>Если по нашей вине результат не достигнут — вторая часть не взимается.</p></div>
-      <div class="why-card"><div class="ic">&#128203;</div><h4>Прозрачный договор</h4><p>Все обязательства обеих сторон прописаны в договоре до начала работы.</p></div>
-      <div class="why-card"><div class="ic">&#127919;</div><h4>Нам выгодно довести вас</h4><p>Модель мотивирует нас работать до финального результата, а не исчезнуть после предоплаты.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div class="about-img">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Weiming_Lake%2C_Peking_University.jpg/900px-Weiming_Lake%2C_Peking_University.jpg" alt="Озеро Вэймин, Пекинский университет" loading="lazy" style="width:100%;height:100%;">
-      <div class="about-cap">
-        <blockquote>Мы не просто отправляем на курсы — мы доводим до двери университета и регистрации в офисе.</blockquote>
-        <div class="who">Bridge to China</div>
-      </div>
-    </div>
-    <div>
-      <span class="eyebrow">О компании</span>
-      <h2 style="margin-top:10px;font-size:clamp(22px,2.8vw,32px);">Специализируемся на языковых курсах в Китае</h2>
-      <p style="margin-top:13px;color:var(--ink-soft);font-size:15px;">Bridge to China помогает русскоязычным студентам поступить на интенсивные языковые курсы в китайские университеты. Занимаемся именно курсами: подготовка к HSK, изучение языка и культуры в реальной языковой среде. После успешной сдачи экзаменов — возможность получить гранты и продолжить обучение на конкретной специальности.</p>
-      <ul class="al">
-        <li><span class="dot"></span><span><b>Языковые курсы — главное направление.</b> Помогаем поступить на интенсивные программы изучения китайского с погружением в культуру.</span></li>
-        <li><span class="dot"></span><span><b>Подготовка к HSK.</b> Курсы включают подготовку к сертификационным экзаменам HSK — открывают путь к грантам и специальностям.</span></li>
-        <li><span class="dot"></span><span><b>Подбор «с нуля».</b> Не знаете, куда поступать? Подбираем программу, город и вуз по бюджету и целям.</span></li>
-        <li><span class="dot"></span><span><b>Оплата за результат.</b> Платите частями — вторая половина только после того, как мы довели вас до вуза.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Что входит в услугу</span>
-      <h2>Полное сопровождение поступления</h2>
-      <p>Берём на себя организационную часть — вы фокусируетесь на языке и подготовке.</p>
-    </div>
-    <div class="sg">
-      <div class="sc"><span class="ix">01</span><h3>Языковые курсы и HSK</h3><p>Подбираем интенсивные программы изучения китайского с подготовкой к сертификации HSK — в реальной языковой среде.</p></div>
-      <div class="sc"><span class="ix">02</span><h3>Погружение в культуру Китая</h3><p>Курсы включают знакомство с культурой, традициями и повседневной жизнью страны — это часть программы, а не опция.</p></div>
-      <div class="sc"><span class="ix">03</span><h3>Подбор университета и города</h3><p>Учитываем бюджет, климат, специализацию вуза — если не знаете, куда, поможем выбрать с нуля.</p></div>
-      <div class="sc"><span class="ix">04</span><h3>Подготовка документов</h3><p>Собираем и оформляем полный пакет документов для подачи заявки в выбранный университет.</p></div>
-      <div class="sc"><span class="ix">05</span><h3>Поддержка на всех этапах</h3><p>Telegram, WhatsApp или ВКонтакте — на связи от первой консультации до регистрации в офисе вуза.</p></div>
-      <div class="sc"><span class="ix">06</span><h3>Путь к грантам и специальностям</h3><p>После языковых курсов и успешной сдачи экзаменов открывается возможность поступить на бакалавриат или магистратуру с грантом.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
+<!-- ═══ PROCESS ═══ -->
 <section class="process" id="process">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Как это работает</span>
-      <h2>Семь шагов через мост</h2>
-      <p class="sd">От первого сообщения нам до регистрации в университете Китая.</p>
-    </div>
-    <div class="rail">
-      <div class="rl"></div>
-      <div class="steps">
-        <div class="step"><div class="node">RU</div><h4>Заявка и консультация</h4><p>Цели, бюджет, пожелания по городу и программе.</p></div>
-        <div class="step"><div class="node">1</div><h4>Подбор программы</h4><p>Языковые курсы + HSK под ваши цели и бюджет.</p></div>
-        <div class="step"><div class="node">2</div><h4>Договор и оплата</h4><p>Фиксируем условия, начинаем работу.</p></div>
-        <div class="step"><div class="node">3</div><h4>Документы и подача</h4><p>Готовим пакет, подаём заявку в вуз.</p></div>
-        <div class="step"><div class="node">4</div><h4>Приглашение от вуза</h4><p>Получаете официальное приглашение для оформления документов.</p></div>
-        <div class="step"><div class="node">5</div><h4>Курсы и HSK</h4><p>Обучение в Китае, сдача экзаменов, культурное погружение.</p></div>
-        <div class="step"><div class="node">CN</div><h4>Прибытие и регистрация</h4><p>Сопровождаем до регистрации в офисе университета.</p></div>
-      </div>
-    </div>
-    <div class="rbanks"><span>Россия</span><span>Bridge to China</span><span>Китай</span></div>
-  </div>
-</section>
-
-<!-- UNIVERSITIES -->
-<section id="universities">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Города и университеты</span>
-      <h2>Где можно учиться</h2>
-      <p>Примеры популярных направлений — финальный список подбираем под ваши цели и бюджет.</p>
-    </div>
-    <div class="ug">
-
-      <div class="uc">
-        <div class="ua"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Beijing_Language_and_Culture_University_Auditorium.jpg/700px-Beijing_Language_and_Culture_University_Auditorium.jpg" alt="BLCU Пекин" loading="lazy"></div>
-        <div class="ub"><div class="ub-city">Пекин</div><h3>Beijing Language &amp; Culture University</h3><p>Главный вуз Китая для языковых программ и HSK — «Маленькая ООН».</p></div>
-      </div>
-
-      <div class="uc">
-        <div class="ua"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Fudan_University_Jiangwan_Campus.jpg/700px-Fudan_University_Jiangwan_Campus.jpg" alt="Fudan University Шанхай" loading="lazy"></div>
-        <div class="ub"><div class="ub-city">Шанхай</div><h3>Fudan University</h3><p>Мегаполис мирового класса, широкий выбор специальностей для бакалавриата и магистратуры.</p></div>
-      </div>
-
-      <div class="uc">
-        <div class="ua"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Harbin_IT_04.jpg/700px-Harbin_IT_04.jpg" alt="HIT Харбин" loading="lazy"></div>
-        <div class="ub"><div class="ub-city">Харбин</div><h3>Harbin Institute of Technology</h3><p>Сильное техническое образование, доступное жильё и близость к России.</p></div>
-      </div>
-
-      <div class="uc">
-        <div class="ua"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Guangzhou_South_Campus%2C_Sun_Yat-sen_University.jpg/700px-Guangzhou_South_Campus%2C_Sun_Yat-sen_University.jpg" alt="Sun Yat-sen Гуанчжоу" loading="lazy"></div>
-        <div class="ub"><div class="ub-city">Гуанчжоу</div><h3>Sun Yat-sen University</h3><p>Южный Китай, тёплый климат, развитая инфраструктура для иностранных студентов.</p></div>
-      </div>
-
-      <div class="uc">
-        <div class="ua"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Huxiao_River_of_Zhejiang_University_Yuquan_Campus.jpg/700px-Huxiao_River_of_Zhejiang_University_Yuquan_Campus.jpg" alt="Zhejiang University Ханчжоу" loading="lazy"></div>
-        <div class="ub"><div class="ub-city">Ханчжоу</div><h3>Zhejiang University</h3><p>Один из ведущих вузов страны, живописный кампус рядом с озером Сиху.</p></div>
-      </div>
-
-      <div class="uc">
-        <div class="ua"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Museum_of_Harbin_Institute_of_Technology.jpg/700px-Museum_of_Harbin_Institute_of_Technology.jpg" alt="Sichuan University Чэнду" loading="lazy"></div>
-        <div class="ub"><div class="ub-city">Чэнду</div><h3>Sichuan University</h3><p>Мягкая адаптация для иностранцев и насыщенная культурная программа.</p></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing" id="price">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Стоимость</span>
-      <h2>Прозрачная цена с оплатой по этапам</h2>
-      <p>Стоимость обучения оплачивается отдельно напрямую университету. Наша услуга — фиксированная.</p>
-    </div>
-    <div class="pg">
-      <div class="pl">
-        <span class="eyebrow">Сопровождение «под ключ»</span>
-        <div class="pl-amt">50 000 <sub>&#8381;</sub></div>
-        <div class="pl-parts">
-          <div class="pl-part"><b>25 000 &#8381;</b>предоплата при старте</div>
-          <div class="pl-part"><b>25 000 &#8381;</b>после результата</div>
+    <div class="ey reveal">Как мы работаем</div>
+    <h2 class="reveal reveal-delay-1">Пять шагов до<br>языковых курсов в Китае</h2>
+    <div class="process-track">
+      <div class="process-line"></div>
+      <div class="pstep reveal">
+        <div class="pstep-dot">01</div>
+        <div class="pstep-body">
+          <h3>Оставляете заявку</h3>
+          <p>Заполняете форму или пишете нам в мессенджер — отвечаем в течение рабочего дня.</p>
         </div>
-        <p>Вторая часть взимается только после прибытия и регистрации в офисе вуза — без результата не платите.</p>
       </div>
-      <div class="pr">
-        <h3>В стоимость входит:</h3>
-        <ul>
-          <li><span class="ck">&#10003;</span>Консультация и подбор языковой программы, города и университета</li>
-          <li><span class="ck">&#10003;</span>Подготовка и оформление полного пакета документов</li>
-          <li><span class="ck">&#10003;</span>Подача заявки в выбранный университет</li>
-          <li><span class="ck">&#10003;</span>Сопровождение до прибытия и регистрации в офисе вуза</li>
-          <li><span class="ck">&#10003;</span>Поддержка в Telegram / WhatsApp / ВКонтакте на всех этапах</li>
-        </ul>
-        <div class="pr-note">Стоимость самих курсов оплачивается отдельно напрямую университету. Работаем только с платными программами.</div>
+      <div class="pstep reveal reveal-delay-1">
+        <div class="pstep-dot">02</div>
+        <div class="pstep-body">
+          <h3>Бесплатная консультация</h3>
+          <p>Обсуждаем ваши цели, бюджет и пожелания по городу. Подбираем программы и университеты — подходящие именно вам.</p>
+        </div>
+      </div>
+      <div class="pstep reveal reveal-delay-2">
+        <div class="pstep-dot">03</div>
+        <div class="pstep-body">
+          <h3>Договор и документы</h3>
+          <p>Заключаем договор, готовим полный пакет документов и подаём заявку в выбранный вуз.</p>
+        </div>
+      </div>
+      <div class="pstep reveal reveal-delay-3">
+        <div class="pstep-dot">04</div>
+        <div class="pstep-body">
+          <h3>Ответ от университета</h3>
+          <p>Получаете официальное приглашение. Помогаем разобраться со следующими шагами.</p>
+        </div>
+      </div>
+      <div class="pstep reveal reveal-delay-4">
+        <div class="pstep-dot">05</div>
+        <div class="pstep-body">
+          <h3>Зачисление завершено</h3>
+          <p>Оформление закрыто — вы зачислены на языковые курсы. Именно в этот момент выплачивается вторая часть оплаты нашей услуги.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews">
+<!-- ═══ CITIES ═══ -->
+<section class="cities" id="cities">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Отзывы</span>
-      <h2>Что говорят студенты</h2>
+    <div class="ey reveal">Города и университеты</div>
+    <div class="cities-head reveal reveal-delay-1">
+      <h2>Поможем поступить<br>в любой город Китая</h2>
+      <p>Популярные направления — выбор всегда остаётся за вами.</p>
     </div>
-    <div class="rg">
-      <div class="rc"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Вообще не знала, с чего начать — помогли подобрать программу, город и вуз под мой бюджет, собрали все документы. Всё прошло без стресса, добралась до кампуса и сразу зарегистрировалась.</p><div class="rc-who"><div class="rc-av">А</div><div><div class="nm">Алина</div><div class="mt">языковые курсы, Харбин</div></div></div></div>
-      <div class="rc"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Отвечали в Telegram в любое время — ни один вопрос не завис в воздухе. Особенно помогло то, что объяснили, как подготовиться к HSK ещё до отъезда. Теперь хочу остаться на специальность.</p><div class="rc-who"><div class="rc-av">Д</div><div><div class="nm">Денис</div><div class="mt">языковые курсы, Пекин</div></div></div></div>
-      <div class="rc"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Пошла именно за языком и культурой — и получила именно это. Курсы интенсивные, среда полного погружения, плюс сдала HSK. Сейчас уже планирую поступление на специальность.</p><div class="rc-who"><div class="rc-av">М</div><div><div class="nm">Марина</div><div class="mt">языковые курсы, Шанхай</div></div></div></div>
+    <div class="city-grid reveal">
+      <div class="city-card featured">
+        <div class="city-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Beijing_Language_and_Culture_University_Auditorium.jpg/700px-Beijing_Language_and_Culture_University_Auditorium.jpg" alt="Пекин BLCU" loading="lazy"></div>
+        <div class="city-overlay"></div>
+        <div class="city-info">
+          <span class="city-badge">Пекин</span>
+          <span class="city-name">Beijing Language and Culture University</span>
+          <p class="city-desc">Главный вуз Китая для иностранных студентов. Языковые программы любого уровня в столице страны.</p>
+        </div>
+      </div>
+      <div class="city-card">
+        <div class="city-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Fudan_University_Jiangwan_Campus.jpg/700px-Fudan_University_Jiangwan_Campus.jpg" alt="Шанхай Fudan" loading="lazy"></div>
+        <div class="city-overlay"></div>
+        <div class="city-info">
+          <span class="city-badge">Шанхай</span>
+          <span class="city-name">Fudan University</span>
+          <p class="city-desc">Один из самых известных вузов. Идеальная языковая среда мегаполиса.</p>
+        </div>
+      </div>
+      <div class="city-card">
+        <div class="city-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Huxiao_River_of_Zhejiang_University_Yuquan_Campus.jpg/700px-Huxiao_River_of_Zhejiang_University_Yuquan_Campus.jpg" alt="Ханчжоу Zhejiang" loading="lazy"></div>
+        <div class="city-overlay"></div>
+        <div class="city-info">
+          <span class="city-badge">Ханчжоу</span>
+          <span class="city-name">Zhejiang University</span>
+          <p class="city-desc">Живописный кампус и комфортный город рядом с озером Сиху.</p>
+        </div>
+      </div>
+      <div class="city-card">
+        <div class="city-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Southern_Area_of_Yuehai_Campus%2C_Shenzhen_University.jpg/700px-Southern_Area_of_Yuehai_Campus%2C_Shenzhen_University.jpg" alt="Шэньчжэнь" loading="lazy"></div>
+        <div class="city-overlay"></div>
+        <div class="city-info">
+          <span class="city-badge">Шэньчжэнь</span>
+          <span class="city-name">Shenzhen University</span>
+          <p class="city-desc">Технологичный город, молодая среда и сильный языковой факультет.</p>
+        </div>
+      </div>
+      <div class="city-card">
+        <div class="city-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sichuan_University_Huaxi_Campus_Main_Building.jpg/700px-Sichuan_University_Huaxi_Campus_Main_Building.jpg" alt="Чэнду Sichuan" loading="lazy"></div>
+        <div class="city-overlay"></div>
+        <div class="city-info">
+          <span class="city-badge">Чэнду</span>
+          <span class="city-name">Sichuan University</span>
+          <p class="city-desc">Культурная столица Юго-Запада, насыщенная студенческая жизнь.</p>
+        </div>
+      </div>
+      <div class="city-card city-last">
+        <div class="ql">Любой город</div>
+        <h3>Не нашли свой вариант?</h3>
+        <a href="#contact">Обсудить на консультации →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ═══ QUOTE ═══ -->
+<section class="quote-section">
+  <div class="wrap">
+    <div class="quote-inner reveal">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Я не верила, что за год смогу <strong>думать на китайском</strong>. Оказалось, когда ты живёшь в Китае — выбора нет. Ты просто начинаешь.</p>
+      <div class="quote-attr"><span class="quote-stars">★★★★★</span>Алина — языковые курсы, Пекин</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="ey reveal">Отзывы</div>
+    <h2 class="reveal reveal-delay-1">Уже учатся в Китае</h2>
+    <div class="rev-grid">
+      <div class="rev reveal reveal-delay-1">
+        <div class="rev-stars">★★★★★</div>
+        <p>Совсем не понимала, с чего начать. Менеджер расписал всё по шагам, помог выбрать вуз под мой бюджет и собрал документы. Добралась до кампуса без единого стресса.</p>
+        <div class="rev-who"><div class="rev-av">А</div><div><span class="rev-nm">Алина</span><span class="rev-ct">Языковые курсы, Харбин</span></div></div>
+      </div>
+      <div class="rev reveal reveal-delay-2">
+        <div class="rev-stars">★★★★★</div>
+        <p>Отвечали быстро и по делу. Никогда раньше не занимался документами для учёбы за рубежом — здесь объяснили всё на нормальном языке. Поступил с первой подачи.</p>
+        <div class="rev-who"><div class="rev-av">Д</div><div><span class="rev-nm">Денис</span><span class="rev-ct">Языковые курсы, Пекин</span></div></div>
+      </div>
+      <div class="rev reveal reveal-delay-3">
+        <div class="rev-stars">★★★★★</div>
+        <p>Хотела именно в Шанхай — подобрали Fudan, помогли с бумагами. Сейчас живу здесь и учусь. Очень рада, что не пыталась разбираться самостоятельно.</p>
+        <div class="rev-who"><div class="rev-av">М</div><div><span class="rev-nm">Марина</span><span class="rev-ct">Языковые курсы, Шанхай</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICE ═══ -->
+<section class="price-section" id="price">
+  <div class="wrap">
+    <div class="ey-dark reveal">Стоимость</div>
+    <h2 class="reveal reveal-delay-1" style="color:var(--ink);">Прозрачная цена,<br>оплата в два этапа</h2>
+    <div class="price-block reveal reveal-delay-2">
+      <div class="pb-left">
+        <div class="total">50 000<sub> ₽</sub></div>
+        <div class="total-note">Полная стоимость сопровождения. Стоимость самих курсов — отдельно, напрямую в вуз.</div>
+        <div class="pay-steps">
+          <div class="pay-s p1">
+            <div class="pay-s-num">1</div>
+            <div class="pay-s-txt"><b>25 000 ₽ — при заключении договора</b><span>Сразу начинаем: подбор, документы, подача заявки</span></div>
+          </div>
+          <div class="pay-s p2">
+            <div class="pay-s-num">2</div>
+            <div class="pay-s-txt"><b>25 000 ₽ — после завершения оформления</b><span>После получения приглашения от университета</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pb-right">
+        <h3>Что включено:</h3>
+        <ul class="inc">
+          <li class="inc-i"><span class="inc-check">✓</span>Бесплатная консультация и подбор программы</li>
+          <li class="inc-i"><span class="inc-check">✓</span>Выбор университета и города под ваши цели</li>
+          <li class="inc-i"><span class="inc-check">✓</span>Подготовка и оформление пакета документов</li>
+          <li class="inc-i"><span class="inc-check">✓</span>Подача заявки и отслеживание статуса</li>
+          <li class="inc-i"><span class="inc-check">✓</span>Личный менеджер в Telegram / WhatsApp / ВКонтакте</li>
+          <li class="inc-i"><span class="inc-check">✓</span>Сопровождение до получения приглашения от вуза</li>
+        </ul>
+        <div class="price-footnote">Никаких скрытых платежей. Все условия зафиксированы в договоре до начала работы.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Частые вопросы</span>
-      <h2>Коротко о важном</h2>
-    </div>
-    <div class="fl-list">
-      <div class="fi open"><button class="fq"><span>Нужно ли знать китайский, чтобы поехать на курсы?</span><span class="plus">+</span></button><div class="fa"><p>Нет. Большинство программ рассчитаны на студентов с нулевым уровнем — именно с этого и начинают языковые курсы.</p></div></div>
-      <div class="fi"><button class="fq"><span>Что такое HSK и зачем он нужен?</span><span class="plus">+</span></button><div class="fa"><p>HSK — официальный государственный экзамен по китайскому языку. Сертификат открывает доступ к грантам и поступлению на специальности в китайские вузы.</p></div></div>
-      <div class="fi"><button class="fq"><span>Можно ли поступить бесплатно?</span><span class="plus">+</span></button><div class="fa"><p>Мы работаем только с платными программами. Гранты возможны после курсов и успешной сдачи HSK — это следующий шаг, не отправная точка.</p></div></div>
-      <div class="fi"><button class="fq"><span>До какого момента вы сопровождаете?</span><span class="plus">+</span></button><div class="fa"><p>До прибытия в Китай и регистрации в офисе вуза — именно здесь заканчивается наша работа и вступает в силу вторая часть оплаты.</p></div></div>
-      <div class="fi"><button class="fq"><span>Я совсем не знаю, в какой город и вуз ехать — поможете?</span><span class="plus">+</span></button><div class="fa"><p>Да, это одна из ключевых задач. Подбираем программу, город и университет по вашим пожеланиям, бюджету и целям — даже если вы пока вообще не ориентируетесь.</p></div></div>
+    <div class="ey reveal">Вопросы и ответы</div>
+    <h2 class="reveal reveal-delay-1">Часто спрашивают</h2>
+    <div class="faq-wrap">
+      <div class="fq open reveal reveal-delay-1">
+        <button class="fq-btn"><span>Нужно ли знать китайский, чтобы поехать?</span><span class="fq-icon">+</span></button>
+        <div class="fq-body"><p>Нет. Языковые программы как раз начинаются с нулевого уровня — в этом их суть. На консультации расскажем, какие программы подходят вашему уровню.</p></div>
+      </div>
+      <div class="fq reveal reveal-delay-2">
+        <button class="fq-btn"><span>Как выбрать город и университет?</span><span class="fq-icon">+</span></button>
+        <div class="fq-body"><p>Это мы делаем вместе на консультации. Учитываем бюджет, климат, стиль жизни и цели обучения. Помогаем поступить в любой город Китая.</p></div>
+      </div>
+      <div class="fq reveal reveal-delay-3">
+        <button class="fq-btn"><span>Когда я плачу вторую часть?</span><span class="fq-icon">+</span></button>
+        <div class="fq-body"><p>После того, как мы полностью завершим оформление зачисления и вы получите официальное приглашение от университета — это зафиксировано в договоре.</p></div>
+      </div>
+      <div class="fq reveal">
+        <button class="fq-btn"><span>Какие документы нужны для поступления?</span><span class="fq-icon">+</span></button>
+        <div class="fq-body"><p>Базовый пакет: загранпаспорт, внутренний паспорт, фото, медицинская справка китайского образца. Точный список зависит от вуза — составляем его вместе.</p></div>
+      </div>
+      <div class="fq reveal">
+        <button class="fq-btn"><span>Можно ли поступить бесплатно?</span><span class="fq-icon">+</span></button>
+        <div class="fq-body"><p>Мы работаем только с платными программами — это наш честный подход. Гранты и стипендии существуют, но являются отдельным, более сложным процессом.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ═══ CTA FULL ═══ -->
+<div class="cta-full">
+  <div class="cta-full-kanji" aria-hidden="true">你好</div>
+  <div class="wrap">
+    <h2 class="reveal">Готовы? Начнём с бесплатной консультации</h2>
+    <p class="reveal reveal-delay-1">Расскажите о своих планах — подберём программу, город и объясним все шаги.</p>
+    <div class="btns reveal reveal-delay-2">
+      <a href="#contact" class="btn btn-white" style="padding:16px 32px;font-size:15px;">Оставить заявку</a>
+      <a href="https://t.me/" target="_blank" class="btn btn-red-border" style="padding:16px 28px;font-size:15px;">Написать в Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
 <section class="contact" id="contact">
-  <div class="wrap cg">
-    <div class="cl">
-      <span class="eyebrow">Заявка</span>
-      <h2 style="margin-top:10px;font-size:clamp(22px,2.8vw,30px);">Расскажите о своих целях — подберём вариант</h2>
-      <p>Ответим в рабочий день. Поможем разобраться, с чего начать: языковые курсы, HSK или поступление на специальность.</p>
-      <div class="msg-row">
-        <a class="mp" href="https://t.me/" target="_blank" rel="noopener">&#9992; Telegram</a>
-        <a class="mp" href="https://wa.me/" target="_blank" rel="noopener">&#128172; WhatsApp</a>
-        <a class="mp" href="https://vk.com/" target="_blank" rel="noopener">&#128309; ВКонтакте</a>
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <div class="ey reveal">Контакты</div>
+      <h2 class="reveal reveal-delay-1">Расскажите<br>о своих планах</h2>
+      <p class="reveal reveal-delay-2">Первая консультация бесплатно. Отвечаем в рабочий день — помогаем разобраться с программами, городами и всем остальным.</p>
+      <div class="channels reveal reveal-delay-3">
+        <a class="ch" href="https://t.me/" target="_blank" rel="noopener">✈ Telegram</a>
+        <a class="ch" href="https://wa.me/" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="ch" href="https://vk.com/" target="_blank" rel="noopener">🔵 ВКонтакте</a>
       </div>
     </div>
-    <div class="fc-card">
-      <form id="leadForm">
+    <div class="form-card reveal reveal-delay-2">
+      <form id="lf">
         <div class="f-row">
-          <div><label for="nm">Имя</label><input id="nm" type="text" placeholder="Как к вам обращаться" required></div>
-          <div><label for="ct">Телефон или ник</label><input id="ct" type="text" placeholder="Telegram, WhatsApp или телефон" required></div>
+          <div class="fld"><label>Имя</label><input type="text" placeholder="Как к вам обращаться" required></div>
+          <div class="fld"><label>Telegram / телефон</label><input type="text" placeholder="+7 или @username" required></div>
         </div>
         <div class="f-row">
-          <div><label for="gl">Что интересует</label>
-            <select id="gl"><option>Языковые курсы / HSK</option><option>Подготовка к бакалавриату</option><option>Подготовка к магистратуре</option><option>Ещё не определился(ась)</option></select></div>
-          <div><label for="ms">Мессенджер</label>
-            <select id="ms"><option>Telegram</option><option>WhatsApp</option><option>ВКонтакте</option></select></div>
+          <div class="fld"><label>Интересует</label>
+            <select><option>Языковые курсы в Китае</option><option>Подбор университета</option><option>Ещё не определился(ась)</option></select>
+          </div>
+          <div class="fld"><label>Мессенджер</label>
+            <select><option>Telegram</option><option>WhatsApp</option><option>ВКонтакте</option></select>
+          </div>
         </div>
-        <div class="f-foot">
-          <button type="submit" class="btn btn-p">Оставить заявку</button>
-          <small>Отправляя заявку, вы соглашаетесь на обработку персональных данных.</small>
+        <div class="fld"><label>Вопрос (необязательно)</label><textarea placeholder="Расскажите о своих планах — это поможет подготовиться к консультации"></textarea></div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-red" style="padding:14px 28px;">Отправить заявку</button>
+          <small>Нажимая кнопку, вы соглашаетесь на обработку персональных данных</small>
         </div>
-        <div id="formSuccess">Заявка отправлена — свяжемся с вами в выбранном мессенджере!</div>
+        <div id="fs">👋 Заявка получена! Свяжемся с вами в выбранном мессенджере.</div>
       </form>
     </div>
   </div>
@@ -552,49 +786,79 @@ footer{background:var(--ink);color:rgba(255,255,255,.58);padding:50px 0 22px;}
 
 <footer>
   <div class="wrap">
-    <div class="fg">
+    <div class="foot-grid">
       <div>
-        <div class="fl-logo">
-          <svg viewBox="0 0 36 36" fill="none" width="26" height="26"><circle cx="18" cy="18" r="17" stroke="#C1502E" stroke-width="1.5"/><path d="M4 22c4-7 10-7 14-7s10 0 14 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="22" r="2" fill="#C1502E"/><circle cx="29" cy="22" r="2" fill="#2F6657"/></svg>
+        <div class="foot-brand">
+          <svg width="24" height="24" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="#C8301D" stroke-width="1.5"/><path d="M4 22c4-7 10-7 14-7s10 0 14 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="22" r="2" fill="#C8301D"/><circle cx="29" cy="22" r="2" fill="#C8963B"/></svg>
           Bridge to China
         </div>
-        <p>Помогаем русскоязычным студентам поступить на языковые курсы в Китае: подбор программы, документы, сопровождение до зачисления.</p>
+        <p class="foot-desc">Помогаем русскоязычным студентам поступить на языковые курсы в ведущие университеты Китая.</p>
       </div>
-      <div class="fcol">
-        <h5>Разделы</h5>
-        <a href="#about">О нас</a><a href="#services">Услуги</a>
-        <a href="#process">Процесс</a><a href="#universities">Университеты</a><a href="#price">Стоимость</a>
+      <div class="fc">
+        <h5>Навигация</h5>
+        <a href="#why">О курсах</a>
+        <a href="#services">Услуги</a>
+        <a href="#process">Процесс</a>
+        <a href="#cities">Университеты</a>
+        <a href="#price">Стоимость</a>
+        <a href="#faq">Вопросы</a>
       </div>
-      <div class="fcol">
-        <h5>Связь</h5>
-        <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://vk.com/" target="_blank" rel="noopener">ВКонтакте</a>
+      <div class="fc">
+        <h5>Связаться</h5>
+        <a href="https://t.me/" target="_blank">Telegram</a>
+        <a href="https://wa.me/" target="_blank">WhatsApp</a>
+        <a href="https://vk.com/" target="_blank">ВКонтакте</a>
         <a href="mailto:info@bridgetochina.ru">info@bridgetochina.ru</a>
       </div>
     </div>
-    <div class="fb">
-      <span>&#169; 2026 Bridge to China. Все права защищены.</span>
+    <div class="foot-bottom">
+      <span>© 2026 Bridge to China. Все права защищены.</span>
       <span>Работаем только с платными программами китайских университетов.</span>
     </div>
   </div>
 </footer>
 
 <script>
+// ─── NAV scroll ───
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>60);},{ passive:true });
+
+// ─── Burger ───
 const burger=document.getElementById('burger'),mob=document.getElementById('mob');
-burger.addEventListener('click',()=>mob.classList.toggle('open'));
-mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
-document.querySelectorAll('.fi').forEach(item=>{
-  item.querySelector('.fq').addEventListener('click',()=>{
-    const open=item.classList.contains('open');
-    document.querySelectorAll('.fi').forEach(i=>i.classList.remove('open'));
-    if(!open)item.classList.add('open');
+burger.addEventListener('click',()=>{
+  burger.classList.toggle('active');
+  mob.classList.toggle('open');
+});
+mob.querySelectorAll('.mob-link').forEach(a=>a.addEventListener('click',()=>{
+  burger.classList.remove('active');mob.classList.remove('open');
+}));
+
+// ─── Reveal on scroll ───
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ─── Hero parallax ───
+const heroBg=document.getElementById('heroBg');
+window.addEventListener('scroll',()=>{
+  if(scrollY<window.innerHeight)heroBg.style.transform='scale(1.04) translateY('+(scrollY*.15)+'px)';
+},{passive:true});
+
+// ─── FAQ ───
+document.querySelectorAll('.fq').forEach(item=>{
+  item.querySelector('.fq-btn').addEventListener('click',()=>{
+    const o=item.classList.contains('open');
+    document.querySelectorAll('.fq').forEach(i=>i.classList.remove('open'));
+    if(!o)item.classList.add('open');
   });
 });
-document.getElementById('leadForm').addEventListener('submit',e=>{
+
+// ─── Form ───
+document.getElementById('lf').addEventListener('submit',e=>{
   e.preventDefault();
-  e.target.style.display='none';
-  document.getElementById('formSuccess').style.display='block';
+  e.target.querySelectorAll('input,select,textarea,button').forEach(el=>el.disabled=true);
+  document.getElementById('fs').style.display='block';
 });
 </script>
 </body>
